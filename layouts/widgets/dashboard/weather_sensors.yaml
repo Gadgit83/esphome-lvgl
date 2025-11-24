@@ -21,7 +21,7 @@ sensor:
           text: !lambda return "Rain: " + to_string(int(x)) + "%";
       - lvgl.label.update:
           id: weather_day1_icon
-          text: !lambda 'if (x > 50) return "\uF019"; else return "\uF059";'
+          text: !lambda "if (x > 50) return \"\uF019\"; else return \"\uF059\";"
 
 # Similar for day2 and day3
 # ... (add analogous for tomorrow and day3)
