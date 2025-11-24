@@ -1,13 +1,12 @@
-widgets:
-  - obj:
-      <<: *container_styles
-      layout:
-        type: flex
-        direction: column
-        wrap: wrap
-        justify_content: flex_start
-        align_items: stretch
-        pad_row: 10
+- obj:
+    <<: *container_styles
+    layout:
+      type: flex
+      direction: column
+      wrap: wrap
+      justify_content: flex_start
+      align_items: stretch
+      pad_row: 10
       widgets:
         # 2x2 grid for 4 sensors
         - obj:

@@ -55,13 +55,14 @@ lvgl:
       - <<: !include { file: widgets/header/widget.yaml, vars: { <<: *nav_widget_vars } }
       - <<: !include { file: widgets/footer/widget.yaml, vars: { <<: *nav_widget_vars } }
       - <<: !include { file: widgets/boot_screen/widget.yaml }
+  pages:
     - id: dashboard
       <<: *page_styles
       on_load:
         - lvgl.label.update:
             id: page_title
             text: Dashboard
-      <<: !include { file: widgets/dashboard/widget.yaml }
+      widgets: !include { file: widgets/dashboard/widget.yaml }
 
     - id: solar_graph
       <<: *page_styles
@@ -69,7 +70,7 @@ lvgl:
         - lvgl.label.update:
             id: page_title
             text: Solar Power
-      <<: !include { file: widgets/graphs/solar_power_widget.yaml }
+      widgets: !include { file: widgets/graphs/solar_power_widget.yaml }
 
     - id: solar_forecast_graph
       <<: *page_styles
@@ -77,7 +78,7 @@ lvgl:
         - lvgl.label.update:
             id: page_title
             text: Solar Forecast
-      <<: !include { file: widgets/graphs/solar_forecast_widget.yaml }
+      widgets: !include { file: widgets/graphs/solar_forecast_widget.yaml }
 
 packages:
   # header
