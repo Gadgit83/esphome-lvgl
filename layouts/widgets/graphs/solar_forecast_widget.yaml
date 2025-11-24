@@ -1,5 +1,5 @@
 - obj:
-    <<: !include ../../../styles/container_styles.yaml
+    <<: !include ../../styles/container_styles.yaml
     pad_top: 0
     pad_bottom: 0
     pad_left: 6
