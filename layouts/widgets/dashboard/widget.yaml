@@ -1,5 +1,9 @@
 - obj:
-    <<: *container_styles
+    <<: !include ../../../styles/container_styles.yaml
+    pad_top: 0
+    pad_bottom: 0
+    pad_left: 6
+    pad_right: 6
     layout:
       type: flex
       direction: column
