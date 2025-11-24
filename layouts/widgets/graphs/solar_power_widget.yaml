@@ -1,0 +1,12 @@
+widgets:
+  - obj:
+      <<: *container_styles
+      widgets:
+        - chart:
+            id: solar_power_chart
+            type: line
+            width: 400
+            height: 200
+            series:
+              - id: solar_series
+                color: 0x00FF00

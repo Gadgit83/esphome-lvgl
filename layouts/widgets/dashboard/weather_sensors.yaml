@@ -1,0 +1,29 @@
+# Weather sensors - assuming HA provides these entities
+sensor:
+  - id: weather_high_today
+    platform: homeassistant
+    entity_id: sensor.weather_high_today
+    on_value:
+      - lvgl.label.update:
+          id: weather_day1_temp
+          text: !lambda return "H:" + to_string(int(x)) + " L:" + to_string(int(id(weather_low_today).state));
+
+  - id: weather_low_today
+    platform: homeassistant
+    entity_id: sensor.weather_low_today
+
+  - id: weather_precip_today
+    platform: homeassistant
+    entity_id: sensor.weather_precip_today
+    on_value:
+      - lvgl.label.update:
+          id: weather_day1_precip
+          text: !lambda return "Rain: " + to_string(int(x)) + "%";
+      - lvgl.label.update:
+          id: weather_day1_icon
+          text: !lambda |
+            if (x > 50) return "\uF019"; // rain
+            else return "\uF059"; // sun
+
+# Similar for day2 and day3
+# ... (add analogous for tomorrow and day3)

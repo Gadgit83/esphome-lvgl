@@ -1,0 +1,13 @@
+sensor:
+  - id: ${uid}
+    platform: homeassistant
+    entity_id: ${entity_id}
+    on_value:
+      - lvgl.label.update:
+          id: ${label_id}
+          text: !lambda |
+            if ("${unit}" == "£") {
+              return "£" + to_string(x, 2);
+            } else {
+              return to_string(int(x)) + "${unit}";
+            }

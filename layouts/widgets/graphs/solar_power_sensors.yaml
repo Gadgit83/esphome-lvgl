@@ -1,0 +1,10 @@
+sensor:
+  - id: solar_power
+    platform: homeassistant
+    entity_id: sensor.solarman_inverter_dc_power
+    on_value:
+      - lvgl.chart.update:
+          id: solar_power_chart
+          series_id: solar_series
+          action: add_point
+          value: !lambda return x;
