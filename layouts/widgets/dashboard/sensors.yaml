@@ -5,9 +5,4 @@ sensor:
     on_value:
       - lvgl.label.update:
           id: ${label_id}
-          text: !lambda |
-            if ("${unit}" == "£") {
-              return "£" + to_string(x, 2);
-            } else {
-              return to_string(int(x)) + "${unit}";
-            }
+          text: !lambda 'if ("${unit}" == "£") { return "£" + to_string(x, 2); } else { return to_string(int(x)) + "${unit}"; }'
