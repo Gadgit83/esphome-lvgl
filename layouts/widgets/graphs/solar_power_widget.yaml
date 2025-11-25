@@ -5,11 +5,6 @@
     pad_left: 6
     pad_right: 6
     widgets:
-      - chart:
-          id: solar_power_chart
-          type: line
-          width: 400
-          height: 200
-          series:
-            - id: solar_series
-              color: 0x00FF00
+      - label:
+          text: "Solar Power Graph\n(Not supported in ESPHome LVGL)"
+          align: CENTER

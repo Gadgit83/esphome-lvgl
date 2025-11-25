@@ -5,11 +5,6 @@
     pad_left: 6
     pad_right: 6
     widgets:
-      - chart:
-          id: solar_forecast_chart
-          type: line
-          width: 400
-          height: 200
-          series:
-            - id: forecast_series
-              color: 0xFFFF00
+      - label:
+          text: "Solar Forecast Graph\n(Not supported in ESPHome LVGL)"
+          align: CENTER
