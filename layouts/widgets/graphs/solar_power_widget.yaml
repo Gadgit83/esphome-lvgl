@@ -5,6 +5,9 @@
     pad_left: 6
     pad_right: 6
     widgets:
-      - label:
-          text: "Solar Power Graph\n(Not supported in ESPHome LVGL)"
+      - image:
+          id: solar_power_chart
+          src: "http://your-grafana-ip:3000/render/d-solo/dashboard-uid/panel-id?width=400&height=200&from=now-24h&to=now"
           align: CENTER
+          width: 400
+          height: 200

@@ -2,9 +2,12 @@
     <<: !include ../../styles/container_styles.yaml
     pad_top: 0
     pad_bottom: 0
-    pad_left: 6
     pad_right: 6
+    pad_left: 6
     widgets:
-      - label:
-          text: "Solar Forecast Graph\n(Not supported in ESPHome LVGL)"
+      - image:
+          id: solar_forecast_chart
+          src: "http://your-grafana-ip:3000/render/d-solo/dashboard-uid/panel-id?width=400&height=200&from=now-24h&to=now"
           align: CENTER
+          width: 400
+          height: 200

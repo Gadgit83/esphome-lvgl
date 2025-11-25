@@ -87,8 +87,11 @@
                 text: "\uF059"
                 text_font: mdi_md
             - label:
-                id: weather_day1_temp
-                text: "H:-- L:--"
+                id: weather_day1_high
+                text: "H:--"
+            - label:
+                id: weather_day1_low
+                text: "L:--"
             - label:
                 id: weather_day1_precip
                 text: "Rain: --%"
@@ -106,8 +109,11 @@
                 text: "\uF059"
                 text_font: mdi_md
             - label:
-                id: weather_day2_temp
-                text: "H:-- L:--"
+                id: weather_day2_high
+                text: "H:--"
+            - label:
+                id: weather_day2_low
+                text: "L:--"
             - label:
                 id: weather_day2_precip
                 text: "Rain: --%"
@@ -125,8 +131,27 @@
                 text: "\uF059"
                 text_font: mdi_md
             - label:
-                id: weather_day3_temp
-                text: "H:-- L:--"
+                id: weather_day3_high
+                text: "H:--"
+            - label:
+                id: weather_day3_low
+                text: "L:--"
             - label:
                 id: weather_day3_precip
                 text: "Rain: --%"
+      # CCTV Camera 1
+      - image:
+          id: cctv_cam1
+          src: "http://your-cctv-ip/camera1/snapshot.jpg"
+          x: 10
+          y: 280
+          width: 140
+          height: 100
+      # CCTV Camera 2
+      - image:
+          id: cctv_cam2
+          src: "http://your-cctv-ip/camera2/snapshot.jpg"
+          x: 160
+          y: 280
+          width: 140
+          height: 100

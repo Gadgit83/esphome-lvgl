@@ -5,7 +5,7 @@ sensor:
     entity_id: sensor.weather_high_today
     on_value:
       - lvgl.label.update:
-          id: weather_day1_temp
+          id: weather_day1_high
           text: !lambda |-
             char buf[32];
             sprintf(buf, "H:%.0f", x);
@@ -14,6 +14,13 @@ sensor:
   - id: weather_low_today
     platform: homeassistant
     entity_id: sensor.weather_low_today
+    on_value:
+      - lvgl.label.update:
+          id: weather_day1_low
+          text: !lambda |-
+            char buf[32];
+            sprintf(buf, "L:%.0f", x);
+            return std::string(buf);
 
   - id: weather_precip_today
     platform: homeassistant
@@ -23,11 +30,71 @@ sensor:
           id: weather_day1_precip
           text: !lambda |-
             char buf[32];
-            sprintf(buf, "Rain: %.1f", x);
+            sprintf(buf, "Rain: %.1f%%", x);
             return std::string(buf);
-      - lvgl.label.update:
-          id: weather_day1_icon
-          text: !lambda return "\uF059"
 
-# Similar for day2 and day3
-# ... (add analogous for tomorrow and day3)
+  - id: weather_high_tomorrow
+    platform: homeassistant
+    entity_id: sensor.weather_high_tomorrow
+    on_value:
+      - lvgl.label.update:
+          id: weather_day2_high
+          text: !lambda |-
+            char buf[32];
+            sprintf(buf, "H:%.0f", x);
+            return std::string(buf);
+
+  - id: weather_low_tomorrow
+    platform: homeassistant
+    entity_id: sensor.weather_low_tomorrow
+    on_value:
+      - lvgl.label.update:
+          id: weather_day2_low
+          text: !lambda |-
+            char buf[32];
+            sprintf(buf, "L:%.0f", x);
+            return std::string(buf);
+
+  - id: weather_precip_tomorrow
+    platform: homeassistant
+    entity_id: sensor.weather_precip_tomorrow
+    on_value:
+      - lvgl.label.update:
+          id: weather_day2_precip
+          text: !lambda |-
+            char buf[32];
+            sprintf(buf, "Rain: %.1f%%", x);
+            return std::string(buf);
+
+  - id: weather_high_day3
+    platform: homeassistant
+    entity_id: sensor.weather_high_day3
+    on_value:
+      - lvgl.label.update:
+          id: weather_day3_high
+          text: !lambda |-
+            char buf[32];
+            sprintf(buf, "H:%.0f", x);
+            return std::string(buf);
+
+  - id: weather_low_day3
+    platform: homeassistant
+    entity_id: sensor.weather_low_day3
+    on_value:
+      - lvgl.label.update:
+          id: weather_day3_low
+          text: !lambda |-
+            char buf[32];
+            sprintf(buf, "L:%.0f", x);
+            return std::string(buf);
+
+  - id: weather_precip_day3
+    platform: homeassistant
+    entity_id: sensor.weather_precip_day3
+    on_value:
+      - lvgl.label.update:
+          id: weather_day3_precip
+          text: !lambda |-
+            char buf[32];
+            sprintf(buf, "Rain: %.1f%%", x);
+            return std::string(buf);
