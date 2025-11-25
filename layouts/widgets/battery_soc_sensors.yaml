@@ -2,7 +2,7 @@
 # - uid
 # - entity_id
 
-sensor:
+text_sensor:
   - id: ${uid}_battery_soc
     platform: homeassistant
     entity_id: ${entity_id}
