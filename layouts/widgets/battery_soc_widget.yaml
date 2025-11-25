@@ -4,5 +4,5 @@
   widgets:
     - label:
         id: ${uid}_label
-        text: "Battery SoC: {{ volvo_ex30_battery_soc.state }}%"
+        text: "Battery SoC: --%"
         align: center
