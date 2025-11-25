@@ -1,4 +1,3 @@
-obj:
   id: ${uid}_container
   width: ${width}
   height: ${height}
