@@ -33,10 +33,6 @@ script:
     then:
       - lvgl.page.show: ${home_page}
 
-image:
-  - id: boot_logo
-    file: includes/esphome-lvgl/media/sunton_4.3_lighting.jpg
-
 font: !include
   file: fonts/fonts.yaml
   vars:
