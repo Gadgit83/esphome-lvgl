@@ -6,12 +6,14 @@ sensor:
 text_sensor:
   - id: ${uid}_display
     platform: template
-    lambda: |
+    lambda: |-
+      char buf[32];
       if ("${unit}" == "£") {
-        return "£" + std::to_string(id(${uid}).state);
+        sprintf(buf, "£%.2f", id(${uid}).state);
       } else {
-        return std::to_string(int(id(${uid}).state)) + "${unit}";
+        sprintf(buf, "%.0f${unit}", id(${uid}).state);
       }
+      return std::string(buf);
     on_value:
       - lvgl.label.update:
           id: ${label_id}

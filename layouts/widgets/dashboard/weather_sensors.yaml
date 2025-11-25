@@ -2,7 +2,10 @@
 text_sensor:
   - id: temp_display
     platform: template
-    lambda: return "H:" + std::to_string(id(weather_high_today).state);
+    lambda: |-
+      char buf[32];
+      sprintf(buf, "H:%.0f", id(weather_high_today).state);
+      return std::string(buf);
     on_value:
       - lvgl.label.update:
           id: weather_day1_temp
@@ -10,7 +13,10 @@ text_sensor:
 
   - id: rain_display
     platform: template
-    lambda: return "Rain: " + std::to_string(id(weather_precip_today).state);
+    lambda: |-
+      char buf[32];
+      sprintf(buf, "Rain: %.1f", id(weather_precip_today).state);
+      return std::string(buf);
     on_value:
       - lvgl.label.update:
           id: weather_day1_precip
