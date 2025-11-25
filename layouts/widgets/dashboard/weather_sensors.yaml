@@ -1,12 +1,25 @@
 # Weather sensors - assuming HA provides these entities
+text_sensor:
+  - id: temp_display
+    platform: template
+    lambda: return "H:" + std::to_string(id(weather_high_today).state);
+    on_value:
+      - lvgl.label.update:
+          id: weather_day1_temp
+          text: !lambda return x
+
+  - id: rain_display
+    platform: template
+    lambda: return "Rain: " + std::to_string(id(weather_precip_today).state);
+    on_value:
+      - lvgl.label.update:
+          id: weather_day1_precip
+          text: !lambda return x
+
 sensor:
   - id: weather_high_today
     platform: homeassistant
     entity_id: sensor.weather_high_today
-    on_value:
-      - lvgl.label.update:
-          id: weather_day1_temp
-          text: !lambda return "H:" + to_string(int(x)) + " L:" + to_string(int(id(weather_low_today).state));
 
   - id: weather_low_today
     platform: homeassistant
@@ -17,11 +30,8 @@ sensor:
     entity_id: sensor.weather_precip_today
     on_value:
       - lvgl.label.update:
-          id: weather_day1_precip
-          text: !lambda return "Rain: " + to_string(int(x)) + "%";
-      - lvgl.label.update:
           id: weather_day1_icon
-          text: !lambda "if (x > 50) return \"\uF019\"; else return \"\uF059\";"
+          text: !lambda return "\uF059"
 
 # Similar for day2 and day3
 # ... (add analogous for tomorrow and day3)
