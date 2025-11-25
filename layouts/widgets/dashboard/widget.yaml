@@ -141,7 +141,6 @@
                 text: "Rain: --%"
       # CCTV Camera 1
       - image:
-          id: cctv_cam1
           src: "http://your-cctv-ip/camera1/snapshot.jpg"
           x: 10
           y: 280
@@ -149,7 +148,6 @@
           height: 100
       # CCTV Camera 2
       - image:
-          id: cctv_cam2
           src: "http://your-cctv-ip/camera2/snapshot.jpg"
           x: 160
           y: 280

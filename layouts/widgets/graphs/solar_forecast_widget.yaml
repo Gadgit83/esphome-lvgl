@@ -6,7 +6,6 @@
     pad_left: 6
     widgets:
       - image:
-          id: solar_forecast_chart
           src: "http://your-grafana-ip:3000/render/d-solo/dashboard-uid/panel-id?width=400&height=200&from=now-24h&to=now"
           align: CENTER
           width: 400
