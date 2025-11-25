@@ -1,7 +1,18 @@
+# required vars:
+# - uid
+# - width
+# - height
+
+# obj:  
   id: ${uid}_container
   width: ${width}
   height: ${height}
   widgets:
+    - label:
+        id: ${uid}_widget_unknown
+        text: "\U000F01D8"
+        text_font: mdi_lg
+        align: TOP_LEFT
     - label:
         id: ${uid}_label
         text: "Battery SoC: --%"
