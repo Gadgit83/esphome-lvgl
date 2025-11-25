@@ -1,8 +1,8 @@
 sensor:
-  - id: volvo_ex30_battery_soc
+  - id: ${uid}_battery_soc
     platform: homeassistant
-    entity_id: sensor.volvo_ex30_mqtt_battery_charge_level
+    entity_id: ${entity_id}
     on_value:
       - lvgl.label.update:
-          id: battery_soc_label
+          id: ${uid}_label
           text: !lambda 'return "Battery SoC: " + std::to_string((int)x) + "%";'
