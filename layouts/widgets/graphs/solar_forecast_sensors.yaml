@@ -2,10 +2,3 @@ sensor:
   - id: solar_forecast
     platform: homeassistant
     entity_id: sensor.power_production_next_12hours
-    # Assuming it's a single value or need to handle array
-    on_value:
-      - lvgl.chart.update:
-          id: solar_forecast_chart
-          series_id: forecast_series
-          action: add_point
-          value: !lambda return x;
