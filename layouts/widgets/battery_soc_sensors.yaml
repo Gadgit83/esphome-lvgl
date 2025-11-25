@@ -1,0 +1,4 @@
+sensor:
+  - platform: homeassistant
+    id: volvo_ex30_battery_soc
+    entity_id: sensor.volvo_ex30_mqtt_battery_charge_level
