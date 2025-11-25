@@ -1,5 +1,8 @@
 ---
-.sizing:
+substitutions:
+  home_page: dashboard
+
+font: !include
   - &nav_widget_vars
     height: 50
     padding: 8
