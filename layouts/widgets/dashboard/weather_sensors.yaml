@@ -2,7 +2,7 @@
 sensor:
   - id: weather_high_today
     platform: homeassistant
-    entity_id: sensor.weather_high_today
+    entity_id: "sensor.weather_high_today"
     on_value:
       - lvgl.label.update:
           id: weather_day1_high
@@ -13,7 +13,7 @@ sensor:
 
   - id: weather_low_today
     platform: homeassistant
-    entity_id: sensor.weather_low_today
+    entity_id: "sensor.weather_low_today"
     on_value:
       - lvgl.label.update:
           id: weather_day1_low
@@ -24,7 +24,7 @@ sensor:
 
   - id: weather_precip_today
     platform: homeassistant
-    entity_id: sensor.weather_precip_today
+    entity_id: "sensor.weather_precip_today"
     on_value:
       - lvgl.label.update:
           id: weather_day1_precip
@@ -35,7 +35,7 @@ sensor:
 
   - id: weather_high_tomorrow
     platform: homeassistant
-    entity_id: sensor.weather_high_tomorrow
+    entity_id: "sensor.weather_high_tomorrow"
     on_value:
       - lvgl.label.update:
           id: weather_day2_high
@@ -46,7 +46,7 @@ sensor:
 
   - id: weather_low_tomorrow
     platform: homeassistant
-    entity_id: sensor.weather_low_tomorrow
+    entity_id: "sensor.weather_low_tomorrow"
     on_value:
       - lvgl.label.update:
           id: weather_day2_low
@@ -57,7 +57,7 @@ sensor:
 
   - id: weather_precip_tomorrow
     platform: homeassistant
-    entity_id: sensor.weather_precip_tomorrow
+    entity_id: "sensor.weather_precip_tomorrow"
     on_value:
       - lvgl.label.update:
           id: weather_day2_precip
@@ -68,7 +68,7 @@ sensor:
 
   - id: weather_high_day3
     platform: homeassistant
-    entity_id: sensor.weather_high_day3
+    entity_id: "sensor.weather_high_day3"
     on_value:
       - lvgl.label.update:
           id: weather_day3_high
@@ -79,7 +79,7 @@ sensor:
 
   - id: weather_low_day3
     platform: homeassistant
-    entity_id: sensor.weather_low_day3
+    entity_id: "sensor.weather_low_day3"
     on_value:
       - lvgl.label.update:
           id: weather_day3_low
@@ -90,7 +90,7 @@ sensor:
 
   - id: weather_precip_day3
     platform: homeassistant
-    entity_id: sensor.weather_precip_day3
+    entity_id: "sensor.weather_precip_day3"
     on_value:
       - lvgl.label.update:
           id: weather_day3_precip
