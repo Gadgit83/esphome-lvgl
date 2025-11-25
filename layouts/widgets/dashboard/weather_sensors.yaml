@@ -1,31 +1,15 @@
 # Weather sensors - assuming HA provides these entities
-text_sensor:
-  - id: temp_display
-    platform: template
-    lambda: |-
-      char buf[32];
-      sprintf(buf, "H:%.0f", id(weather_high_today).state);
-      return std::string(buf);
-    on_value:
-      - lvgl.label.update:
-          id: weather_day1_temp
-          text: !lambda return x
-
-  - id: rain_display
-    platform: template
-    lambda: |-
-      char buf[32];
-      sprintf(buf, "Rain: %.1f", id(weather_precip_today).state);
-      return std::string(buf);
-    on_value:
-      - lvgl.label.update:
-          id: weather_day1_precip
-          text: !lambda return x
-
 sensor:
   - id: weather_high_today
     platform: homeassistant
     entity_id: sensor.weather_high_today
+    on_value:
+      - lvgl.label.update:
+          id: weather_day1_temp
+          text: !lambda |-
+            char buf[32];
+            sprintf(buf, "H:%.0f", x);
+            return std::string(buf);
 
   - id: weather_low_today
     platform: homeassistant
@@ -35,6 +19,12 @@ sensor:
     platform: homeassistant
     entity_id: sensor.weather_precip_today
     on_value:
+      - lvgl.label.update:
+          id: weather_day1_precip
+          text: !lambda |-
+            char buf[32];
+            sprintf(buf, "Rain: %.1f", x);
+            return std::string(buf);
       - lvgl.label.update:
           id: weather_day1_icon
           text: !lambda return "\uF059"

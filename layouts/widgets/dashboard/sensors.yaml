@@ -2,19 +2,14 @@ sensor:
   - id: ${uid}
     platform: homeassistant
     entity_id: ${entity_id}
-
-text_sensor:
-  - id: ${uid}_display
-    platform: template
-    lambda: |-
-      char buf[32];
-      if ("${unit}" == "£") {
-        sprintf(buf, "£%.2f", id(${uid}).state);
-      } else {
-        sprintf(buf, "%.0f${unit}", id(${uid}).state);
-      }
-      return std::string(buf);
     on_value:
       - lvgl.label.update:
           id: ${label_id}
-          text: !lambda return x
+          text: !lambda |-
+            char buf[32];
+            if ("${unit}" == "£") {
+              sprintf(buf, "£%.2f", x);
+            } else {
+              sprintf(buf, "%.0f${unit}", x);
+            }
+            return std::string(buf);
