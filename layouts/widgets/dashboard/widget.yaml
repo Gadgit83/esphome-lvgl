@@ -141,14 +141,14 @@
                 text: "Rain: --%"
       # CCTV Camera 1
       - image:
-          src: "http://your-cctv-ip/camera1/snapshot.jpg"
+          src: "http://192.168.1.6:8123/api/camera_proxy/camera.living_room_sd"
           x: 10
           y: 280
           width: 140
           height: 100
       # CCTV Camera 2
       - image:
-          src: "http://your-cctv-ip/camera2/snapshot.jpg"
+          src: "http://192.168.1.6:8123/api/camera_proxy/camera.driveway_sd_stream"
           x: 160
           y: 280
           width: 140
