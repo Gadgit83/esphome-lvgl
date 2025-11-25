@@ -1,14 +1,8 @@
   id: ${uid}_container
   width: ${width}
   height: ${height}
-  pad_all: 10
-  bg_color: 0xFFFFFF
-  radius: 10
-  border_width: 2
-  border_color: 0xCCCCCC
   widgets:
     - label:
         id: ${uid}_label
         text: "Battery SoC: {{ volvo_ex30_battery_soc.state }}%"
         align: center
-        color: 0x000000
