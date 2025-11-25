@@ -11,17 +11,17 @@
       justify_content: flex_start
       align_items: stretch
       pad_row: 10
-      widgets:
-        # 2x2 grid for 4 sensors
-        - obj:
-            layout:
-              type: flex
-              direction: row
-              wrap: wrap
-              justify_content: space_evenly
-              align_items: center
-              pad_column: 10
-            widgets:
+    widgets:
+      # 2x2 grid for 4 sensors
+      - obj:
+          layout:
+            type: flex
+            direction: row
+            wrap: wrap
+            justify_content: space_evenly
+            align_items: center
+            pad_column: 10
+          widgets:
               # Car SoC
               - obj:
                   width: 140
