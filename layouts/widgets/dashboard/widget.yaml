@@ -4,23 +4,23 @@
     pad_bottom: 0
     pad_left: 6
     pad_right: 6
+    pad_row: 10
     layout:
       type: flex
       direction: column
       wrap: wrap
       justify_content: flex_start
       align_items: stretch
-      pad_row: 10
     widgets:
       # 2x2 grid for 4 sensors
       - obj:
+          pad_column: 10
           layout:
             type: flex
             direction: row
             wrap: wrap
             justify_content: space_evenly
             align_items: center
-            pad_column: 10
           widgets:
               # Car SoC
               - obj:
