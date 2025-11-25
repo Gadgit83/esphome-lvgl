@@ -1,3 +1,4 @@
+---
 .sizing:
   - &nav_widget_vars
     height: 50
@@ -52,9 +53,9 @@ lvgl:
   theme: !include themes/main.yaml
   top_layer:
     widgets:
-      - <<: !include { file: widgets/header/widget.yaml, vars: { <<: *nav_widget_vars } }
-      - <<: !include { file: widgets/footer/widget.yaml, vars: { <<: *nav_widget_vars } }
-      - <<: !include { file: widgets/boot_screen/widget.yaml }
+      - <<: !include {file:widgets/header/widget.yaml, vars:{<<:*nav_widget_vars}}
+      - <<: !include {file:widgets/footer/widget.yaml, vars:{<<:*nav_widget_vars}}
+      - <<: !include {file:widgets/boot_screen/widget.yaml}
   pages:
     - id: dashboard
       <<: *page_styles
@@ -62,7 +63,7 @@ lvgl:
         - lvgl.label.update:
             id: page_title
             text: Dashboard
-      widgets: !include { file: widgets/dashboard/widget.yaml }
+      widgets: !include {file:widgets/dashboard/widget.yaml}
 
     - id: solar_graph
       <<: *page_styles
@@ -70,7 +71,7 @@ lvgl:
         - lvgl.label.update:
             id: page_title
             text: Solar Power
-      widgets: !include { file: widgets/graphs/solar_power_widget.yaml }
+      widgets: !include {file:widgets/graphs/solar_power_widget.yaml}
 
     - id: solar_forecast_graph
       <<: *page_styles
@@ -78,17 +79,17 @@ lvgl:
         - lvgl.label.update:
             id: page_title
             text: Solar Forecast
-      widgets: !include { file: widgets/graphs/solar_forecast_widget.yaml }
+      widgets: !include {file:widgets/graphs/solar_forecast_widget.yaml}
 
 packages:
   # header
-  header_sensors: !include { file: widgets/header/sensors.yaml }
+  header_sensors: !include {file:widgets/header/sensors.yaml}
 
   # boot screen
-  boot_screen_sensors: !include { file: widgets/boot_screen/sensors.yaml }
+  boot_screen_sensors: !include {file:widgets/boot_screen/sensors.yaml}
 
   # Dashboard sensors
-  car_soc_sensor: !include { file: widgets/dashboard/sensors.yaml, vars: {
+  car_soc_sensor: !include {file:widgets/dashboard/sensors.yaml, vars:{
     uid: car_soc,
     entity_id: sensor.volvo_ex30_mqtt_battery_charge_level,
     label_id: car_soc_value,
@@ -96,7 +97,7 @@ packages:
     unit: "%"
   }}
 
-  electricity_rate_sensor: !include { file: widgets/dashboard/sensors.yaml, vars: {
+  electricity_rate_sensor: !include {file:widgets/dashboard/sensors.yaml, vars:{
     uid: electricity_rate,
     entity_id: sensor.octopus_energy_electricity_20e5423165_1012685307305_current_rate,
     label_id: electricity_rate_value,
@@ -104,7 +105,7 @@ packages:
     unit: "£"
   }}
 
-  battery_storage_sensor: !include { file: widgets/dashboard/sensors.yaml, vars: {
+  battery_storage_sensor: !include {file:widgets/dashboard/sensors.yaml, vars:{
     uid: battery_storage,
     entity_id: sensor.battery_storage,
     label_id: battery_storage_value,
@@ -112,7 +113,7 @@ packages:
     unit: "%"
   }}
 
-  house_load_sensor: !include { file: widgets/dashboard/sensors.yaml, vars: {
+  house_load_sensor: !include {file:widgets/dashboard/sensors.yaml, vars:{
     uid: house_load,
     entity_id: sensor.solarman_house_load_power,
     label_id: house_load_value,
@@ -121,8 +122,8 @@ packages:
   }}
 
   # Weather sensors (placeholder)
-  weather_sensors: !include { file: widgets/dashboard/weather_sensors.yaml }
+  weather_sensors: !include {file:widgets/dashboard/weather_sensors.yaml}
 
   # Graph sensors
-  solar_power_sensor: !include { file: widgets/graphs/solar_power_sensors.yaml }
-  solar_forecast_sensor: !include { file: widgets/graphs/solar_forecast_sensors.yaml }
+  solar_power_sensor: !include {file:widgets/graphs/solar_power_sensors.yaml}
+  solar_forecast_sensor: !include {file:widgets/graphs/solar_forecast_sensors.yaml}
