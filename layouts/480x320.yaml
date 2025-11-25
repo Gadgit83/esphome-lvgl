@@ -87,11 +87,11 @@ lvgl:
             widgets:
               - button: # main floor lights
                   <<: !include
-                    file: widgets/buttons/icon_text_buttons/light_group_buttons/widget.yaml
+                    file: widgets/battery_soc_widget.yaml
                     vars:
-                      uid: main_floor_lights
-                      entity_id: light.main_floor_lights
-                      text: Main Floor
+                      uid: volvo_ex30
+                      entity_id: sensor.volvo_ex30_mqtt_battery_charge_level
+                      text: Volvo EX30
                       <<: *wide_button_widget_vars
 
               - button: # living room light
@@ -129,10 +129,8 @@ packages:
   boot_screen_sensors: !include { file: widgets/boot_screen/sensors.yaml }
 
   # lighting 1
-  main_floor_lights_widget_sensors: !include { file: widgets/buttons/icon_text_buttons/light_group_buttons/sensors.yaml, vars: {
-    uid: main_floor_lights,
-    entity_id: light.main_floor_lights
-  }}
+
+  volvo_ex30_widget_sensors: !include { file: widgets/battery_soc_sensors.yaml }
 
   all_living_room_lights_widget_sensors: !include { file: widgets/buttons/icon_text_buttons/light_buttons/sensors.yaml, vars: {
     uid: all_living_room_lights,
