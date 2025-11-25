@@ -1,3 +1,7 @@
+# required vars:
+# - uid
+# - entity_id
+
 sensor:
   - id: ${uid}_battery_soc
     platform: homeassistant
@@ -5,4 +9,5 @@ sensor:
     on_value:
       - lvgl.label.update:
           id: ${uid}_label
-          text: !lambda 'return "Battery SoC: " + std::to_string((int)x) + "%";'
+          text: !lambda |-
+            return "Battery SoC: " + std::to_string((int)x) + "%";

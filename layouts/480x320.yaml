@@ -130,7 +130,10 @@ packages:
 
   # lighting 1
 
-  volvo_ex30_widget_sensors: !include { file: widgets/battery_soc_sensors.yaml }
+  volvo_ex30_widget_sensors: !include { file: widgets/battery_soc_sensors.yaml, vars: {
+    uid: volvo_ex30,
+    entity_id: sensor.volvo_ex30_mqtt_battery_charge_level
+  }}
 
   all_living_room_lights_widget_sensors: !include { file: widgets/buttons/icon_text_buttons/light_buttons/sensors.yaml, vars: {
     uid: all_living_room_lights,
