@@ -320,14 +320,11 @@ lvgl:
                       text: Living Room
                       <<: *button_widget_vars
 
-              - button: # kitchen light
-                  <<: !include
-                    file: widgets/buttons/icon_text_buttons/light_buttons/widget.yaml
-                    vars:
-                      uid: kitchen_light
-                      entity_id: light.kitchen_light
-                      text: Kitchen
-                      <<: *button_widget_vars
+              - <<: !include
+                  file: widgets/battery_soc_widget.yaml
+                  vars:
+                    uid: battery_soc
+                    <<: *button_widget_vars
 
               - button: # rachel's office light
                   <<: !include
@@ -553,10 +550,7 @@ packages:
     entity_id: light.all_living_room_lights
   }}
 
-  kitchen_light_widget_sensors: !include { file: widgets/buttons/icon_text_buttons/light_buttons/sensors.yaml, vars: {
-    uid: kitchen_light,
-    entity_id: light.kitchen_light
-  }}
+  battery_soc_widget_sensors: !include { file: widgets/battery_soc_sensors.yaml }
 
   rachels_office_light_widget_sensors: !include { file: widgets/buttons/icon_text_buttons/light_buttons/sensors.yaml, vars: {
     uid: rachels_office_light,
