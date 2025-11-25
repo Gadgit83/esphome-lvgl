@@ -35,7 +35,7 @@ script:
 
 image:
   - id: boot_logo
-    file: media/sunton_4.3_lighting.jpg
+    file: includes/esphome-lvgl/media/sunton_4.3_lighting.jpg
 
 font: !include
   file: fonts/fonts.yaml
