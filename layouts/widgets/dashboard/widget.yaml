@@ -4,134 +4,129 @@
     pad_bottom: 0
     pad_left: 6
     pad_right: 6
-    pad_row: 10
-    layout:
-      type: flex
-      direction: column
-      wrap: wrap
-      justify_content: flex_start
-      align_items: stretch
     widgets:
-      # 2x2 grid for 4 sensors
+      # Car SoC
       - obj:
-          pad_column: 10
-          layout:
-            type: flex
-            direction: row
-            wrap: wrap
-            justify_content: space_evenly
-            align_items: center
+          x: 10
+          y: 10
+          width: 140
+          height: 80
+          align: center
           widgets:
-              # Car SoC
-              - obj:
-                  width: 140
-                  height: 80
-                  align: center
-                  widgets:
-                    - label:
-                        text: "\uF1B9"  # MDI car icon
-                        font: mdi_md
-                        align: center
-                    - label:
-                        id: car_soc_value
-                        text: "--%"
-                        align: center
-                        y: 30
-              # Electricity Rate
-              - obj:
-                  width: 140
-                  height: 80
-                  align: center
-                  widgets:
-                    - label:
-                        text: "\uF0E7"  # MDI lightning bolt
-                        font: mdi_md
-                        align: center
-                    - label:
-                        id: electricity_rate_value
-                        text: "£--"
-                        align: center
-                        y: 30
-              # Battery Storage
-              - obj:
-                  width: 140
-                  height: 80
-                  align: center
-                  widgets:
-                    - label:
-                        text: "\uF0084"  # MDI battery
-                        font: mdi_md
-                        align: center
-                    - label:
-                        id: battery_storage_value
-                        text: "--%"
-                        align: center
-                        y: 30
-              # House Load
-              - obj:
-                  width: 140
-                  height: 80
-                  align: center
-                  widgets:
-                    - label:
-                        text: "\uF0100"  # MDI home-lightning-bolt
-                        font: mdi_md
-                        align: center
-                    - label:
-                        id: house_load_value
-                        text: "--W"
-                        align: center
-                        y: 30
-        # Weather forecast
-        - obj:
-            height: 100
-            layout:
-              type: flex
-              direction: row
-              justify_content: space_evenly
-            widgets:
-              # Day 1
-              - obj:
-                  widgets:
-                    - label:
-                        text: "Today"
-                    - label:
-                        id: weather_day1_icon
-                        text: "\uF059"  # Placeholder sun
-                        font: mdi_md
-                    - label:
-                        id: weather_day1_temp
-                        text: "H:-- L:--"
-                    - label:
-                        id: weather_day1_precip
-                        text: "Rain: --%"
-              # Day 2
-              - obj:
-                  widgets:
-                    - label:
-                        text: "Tomorrow"
-                    - label:
-                        id: weather_day2_icon
-                        text: "\uF059"
-                        font: mdi_md
-                    - label:
-                        id: weather_day2_temp
-                        text: "H:-- L:--"
-                    - label:
-                        id: weather_day2_precip
-                        text: "Rain: --%"
-              # Day 3
-              - obj:
-                  widgets:
-                    - label:
-                        text: "Day 3"
-                    - label:
-                        id: weather_day3_icon
-                        text: "\uF059"
-                        font: mdi_md
-                    - label:
-                        id: weather_day3_temp
-                        text: "H:-- L:--"
-                    - label:
-                        id: weather_day3_precip
-                        text: "Rain: --%"
+            - label:
+                text: "\uF1B9"
+                font: mdi_md
+                align: center
+            - label:
+                id: car_soc_value
+                text: "--%"
+                align: center
+                y: 30
+      # Electricity Rate
+      - obj:
+          x: 160
+          y: 10
+          width: 140
+          height: 80
+          align: center
+          widgets:
+            - label:
+                text: "\uF0E7"
+                font: mdi_md
+                align: center
+            - label:
+                id: electricity_rate_value
+                text: "£--"
+                align: center
+                y: 30
+      # Battery Storage
+      - obj:
+          x: 10
+          y: 100
+          width: 140
+          height: 80
+          align: center
+          widgets:
+            - label:
+                text: "\uF0084"
+                font: mdi_md
+                align: center
+            - label:
+                id: battery_storage_value
+                text: "--%"
+                align: center
+                y: 30
+      # House Load
+      - obj:
+          x: 160
+          y: 100
+          width: 140
+          height: 80
+          align: center
+          widgets:
+            - label:
+                text: "\uF0100"
+                font: mdi_md
+                align: center
+            - label:
+                id: house_load_value
+                text: "--W"
+                align: center
+                y: 30
+      # Weather Today
+      - obj:
+          x: 10
+          y: 190
+          width: 140
+          height: 80
+          widgets:
+            - label:
+                text: "Today"
+            - label:
+                id: weather_day1_icon
+                text: "\uF059"
+                font: mdi_md
+            - label:
+                id: weather_day1_temp
+                text: "H:-- L:--"
+            - label:
+                id: weather_day1_precip
+                text: "Rain: --%"
+      # Weather Tomorrow
+      - obj:
+          x: 160
+          y: 190
+          width: 140
+          height: 80
+          widgets:
+            - label:
+                text: "Tomorrow"
+            - label:
+                id: weather_day2_icon
+                text: "\uF059"
+                font: mdi_md
+            - label:
+                id: weather_day2_temp
+                text: "H:-- L:--"
+            - label:
+                id: weather_day2_precip
+                text: "Rain: --%"
+      # Weather Day 3
+      - obj:
+          x: 310
+          y: 190
+          width: 140
+          height: 80
+          widgets:
+            - label:
+                text: "Day 3"
+            - label:
+                id: weather_day3_icon
+                text: "\uF059"
+                font: mdi_md
+            - label:
+                id: weather_day3_temp
+                text: "H:-- L:--"
+            - label:
+                id: weather_day3_precip
+                text: "Rain: --%"
