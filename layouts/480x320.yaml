@@ -85,14 +85,23 @@ lvgl:
             layout:
               <<: *button_layout
             widgets:
-              - button: # main floor lights
+              - button: # car
                   <<: !include
-                    file: widgets/battery_soc_widget.yaml
+                    file: widgets/numeric/numeric_widget.yaml
                     vars:
                       uid: volvo_ex30
                       entity_id: sensor.volvo_ex30_mqtt_battery_charge_level
-                      text: Volvo EX30
-                      <<: *wide_button_widget_vars
+                      label: Volvo EX30
+                      <<: *button_widget_vars
+                      
+              - button: # electric rate
+                  <<: !include
+                    file: widgets/numeric/numeric_widget.yaml
+                    vars:
+                      uid: electricity_rate
+                      entity_id: sensor.octopus_energy_electricity_20e5423165_1012685307305_current_rate
+                      label: Electric Rate
+                      <<: *button_widget_vars
 
               - button: # living room light
                   <<: !include
@@ -130,10 +139,16 @@ packages:
 
   # lighting 1
 
-  volvo_ex30_widget_sensors: !include { file: widgets/battery_soc_sensors.yaml, vars: {
+  volvo_ex30_widget_sensors: !include { file: widgets/numeric/car_sensors.yaml, vars: {
     uid: volvo_ex30,
     entity_id: sensor.volvo_ex30_mqtt_battery_charge_level
   }}
+  
+  electricity_rate_sensors: !include { file: widgets/numeric/octopus_sensors.yaml, vars: {
+    uid: electricity_rate,
+    entity_id: sensor.octopus_energy_electricity_20e5423165_1012685307305_current_rate
+  }}
+  
 
   all_living_room_lights_widget_sensors: !include { file: widgets/buttons/icon_text_buttons/light_buttons/sensors.yaml, vars: {
     uid: all_living_room_lights,

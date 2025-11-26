@@ -3,11 +3,11 @@
 # - entity_id
 
 sensor:
-  - id: ${uid}_battery_soc
+  - id: ${uid}_sensor
     platform: homeassistant
     entity_id: ${entity_id}
     on_value:
       - lvgl.label.update:
           id: ${uid}_label
           text: !lambda |-
-            return ("Battery SoC: " + std::to_string((int)x) + "%").c_str();
+            return (std::to_string((int)x) + "%").c_str();

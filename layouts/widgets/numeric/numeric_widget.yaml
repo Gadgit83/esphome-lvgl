@@ -10,10 +10,9 @@
   widgets:
     - label:
         id: ${uid}_widget_unknown
-        text: "\U000F01D8"
-        text_font: mdi_lg
+        text: ${label}
         align: TOP_LEFT
     - label:
         id: ${uid}_label
-        text: "Battery SoC: --%"
+        text: "--"
         align: center

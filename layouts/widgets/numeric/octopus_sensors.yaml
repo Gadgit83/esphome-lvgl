@@ -1,0 +1,13 @@
+# required vars:
+# - uid
+# - entity_id
+
+sensor:
+  - id: ${uid}_sensor
+    platform: homeassistant
+    entity_id: ${entity_id}
+    on_value:
+      - lvgl.label.update:
+          id: ${uid}_label
+          text: !lambda |-
+            return ("£" + std::to_string((int)x) + "/kWh").c_str();
